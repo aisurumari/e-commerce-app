@@ -1,40 +1,17 @@
-import CategoryMenu from "./components/category-menu/category-menu.component";
-import paw1 from "./assets/images/categories/paw1.png";
-import paw2 from "./assets/images/categories/paw2.png";
-import paw3 from "./assets/images/categories/paw3.png";
-import paw4 from "./assets/images/categories/paw4.png";
-import paw5 from "./assets/images/categories/paw5.png";
+import { Route, Routes } from "react-router-dom";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/navigation/navigation.component";
+import Login from "./routes/login/login.component";
 
 const App = () => {
-  const categories = [
-    {
-      id: 1,
-      title: "t-shirts",
-      image: paw1,
-    },
-    {
-      id: 2,
-      title: "hoodies",
-      image: paw2,
-    },
-    {
-      id: 3,
-      title: "posters",
-      image: paw3,
-    },
-    {
-      id: 4,
-      title: "stickers",
-      image: paw4,
-    },
-    {
-      id: 5,
-      title: "phone cases",
-      image: paw5,
-    },
-  ];
-
-  return <CategoryMenu categories={categories} />;
+  return (
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+      </Route>
+    </Routes>
+  );
 };
 
 export default App;
