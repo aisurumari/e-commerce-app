@@ -79,7 +79,9 @@ const RegistrationForm = () => {
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
-        password
+        password,
+        displayName,
+        newsletterCheckbox
       );
 
       await createUserDocumentFromAuth(user, { displayName });
@@ -95,12 +97,12 @@ const RegistrationForm = () => {
 
   return (
     <div>
-      <div class="form_wrapper">
-        <div class="form_container">
-          <div class="title_container">
+      <div className="form_wrapper">
+        <div className="form_container">
+          <div className="title_container">
             <h1>Register</h1>
           </div>
-          <div class="row clearfix">
+          <div className="row clearfix">
             <div className="">
               <form onSubmit={handleSubmit}>
                 <div className="input_field">
@@ -243,25 +245,25 @@ const RegistrationForm = () => {
                     required
                   />
                 </div>
-                <div class="input_field checkbox_option">
+                <div className="input_field checkbox_option">
                   <input
                     type="checkbox"
                     id="termsCheckbox"
                     onChange={handleTermsChange}
                     checked={termsCheckbox}
                   />
-                  <label for="termsCheckbox">
+                  <label htmlFor="termsCheckbox">
                     I agree with terms and conditions
                   </label>
                 </div>
-                <div class="input_field checkbox_option">
+                <div className="input_field checkbox_option">
                   <input
                     type="checkbox"
                     id="newsletterCheckbox"
                     checked={newsletterCheckbox}
                     onChange={handleNewsletterChange}
                   />
-                  <label for="newsletterCheckbox">
+                  <label htmlFor="newsletterCheckbox">
                     I want to receive the newsletter
                   </label>
                 </div>

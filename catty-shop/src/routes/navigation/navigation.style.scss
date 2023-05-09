@@ -1,17 +1,20 @@
-.navigation {
+.navigation-bar {
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  background-color: #f5ba1a;
 
-  .logo-container {
-    height: 100%;
-    width: 70px;
-    padding: 25px;
+  .logo-link {
+    img {
+      background-color: #f2f2f2;
+      height: 200%;
+      width: 150%;
+      padding: 0px 25px 25px 0px;
+    }
   }
-
-  .nav-links-container {
+  .links-container {
     width: 50%;
     height: 100%;
     display: flex;
